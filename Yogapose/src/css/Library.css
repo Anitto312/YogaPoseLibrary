@@ -1,0 +1,26 @@
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 21px;
+}
+
+.grid-items{
+    display: block;
+    justify-items: center;
+    text-align: center;
+    margin: 2px;
+    height: 350px;
+    border-radius: 3px;
+}
+.grid-button{
+    border: 0cap;
+    transform: translateY(-3px);
+    background: linear-gradient(90deg, #feb47b,#e8dce5);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+
+        
