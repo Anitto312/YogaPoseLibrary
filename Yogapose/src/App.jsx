@@ -6,6 +6,8 @@ import Library from "./Library"
 import Tasks from "./Tasks"
 import Help from "./Help"
 import Acheivements from "./Acheivements"
+import Signup from './Signup'
+import Login from './Login'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
             <Route path="/Tasks" element={<Tasks/>}></Route>
             <Route path="/Help" element={<Help/>}></Route>
             <Route path="/Acheivements" element={<Acheivements/>}></Route>
+            <Route path="/Signup" element={<Signup/>}></Route>
+            <Route path="/Login" element={<Login/>}></Route>
         </Routes>
       </BrowserRouter>
     </main>
