@@ -6,7 +6,6 @@ const Achievement = () => {
     const milestones = [5, 10, 15, 20, 25, 30];
 
     useEffect(() => {
-        // Simulating fetching completed tasks (can be replaced with backend data)
         const storedProgress = localStorage.getItem("completedTasks") || 0;
         setCompletedTasks(parseInt(storedProgress));
     }, []);

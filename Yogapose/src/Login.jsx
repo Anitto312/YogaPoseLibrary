@@ -21,11 +21,7 @@ const Login = () => {
             if (!response.ok) {
                 throw new Error(data.message || "Login failed");
             }
-
-            // ✅ Save token in localStorage for authentication
             localStorage.setItem("token", data.token);
-
-            // ✅ Redirect user to library page after successful login
             navigate("/");
         } catch (error) {
             alert(error.message);
@@ -33,7 +29,7 @@ const Login = () => {
     };
 
     return (
-        <div className="auth-container">  {/* ✅ Changed class → className */}
+        <div className="auth-container">
             <h2>Login</h2>
             <form onSubmit={handleLogin}>
                 <input 
