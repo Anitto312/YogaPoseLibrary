@@ -14,7 +14,7 @@
 
 .pose-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 6fr));
     gap: 20px;
     padding: 20px;
 }
@@ -28,7 +28,7 @@
 }
 
 .pose-card img {
-    width: 20%;
+    width: 100%;
     border-radius: 8px;
     height: 200px;
     object-fit: cover;
