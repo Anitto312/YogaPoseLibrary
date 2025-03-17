@@ -19,19 +19,55 @@ import { useState } from "react";
 import "./css/Library.css";
 
 const yogaPoses = [
-    { id: 1, name: "Downward Facing Dog", type: "Standing", image: "/yoga1.png", description: "A great pose for stretching your hamstrings and back." },
-    { id: 2, name: "Tree Pose", type: "Standing", image: "/yoga2.png", description: "Improves balance and strengthens your legs." },
-    { id: 3, name: "Warrior II", type: "Standing", image: "/yoga3.png", description: "Strengthens legs, shoulders, and increases stamina." },
-    { id: 4, name: "Child's Pose", type: "Resting", image: "/yoga4.png", description: "A gentle resting pose to relax your body." },
-    { id: 5, name: "Cobra Pose", type: "Backbend", image: "/yoga5.png", description: "Opens up the chest and strengthens the spine." },
-    { id: 6, name: "Bridge Pose", type: "Backbend", image: "/yog6.png", description: "Strengthens legs, glutes, and lower back." },
-    { id: 7, name: "Seated Forward Bend", type: "Seated", image: "/yoga7.png", description: "Stretches hamstrings, lower back, and spine." },
-    { id: 8, name: "Triangle Pose", type: "Standing", image: "/yoga8.png", description: "Great for stretching the legs and improving flexibility." },
-    { id: 9, name: "Cat-Cow Pose", type: "Warm-up", image: "/yoga9.png", description: "Increases spinal flexibility and relieves tension." }
+    { 
+        id: 1, name: "Downward Facing Dog", type: "Standing", image: "/yoga1.png", 
+        description: "A great pose for stretching your hamstrings and back.",
+        steps: [
+            "Start on your hands and knees.",
+            "Lift your hips toward the ceiling.",
+            "Straighten your legs while keeping your heels down.",
+            "Press your hands firmly into the mat.",
+            "Hold for 5 breaths, then release."
+        ]
+    },
+    { 
+        id: 2, name: "Tree Pose", type: "Standing", image: "/yoga2.png", 
+        description: "Improves balance and strengthens your legs.",
+        steps: [
+            "Stand tall with feet together.",
+            "Shift weight onto one leg and lift the other foot.",
+            "Place the foot on your inner thigh or calf.",
+            "Bring your hands together in front of your chest.",
+            "Hold for 5 breaths, then switch sides."
+        ]
+    },
+    { 
+        id: 3, name: "Warrior II", type: "Standing", image: "/yoga3.png", 
+        description: "Strengthens legs, shoulders, and increases stamina.",
+        steps: [
+            "Step one foot back into a wide stance.",
+            "Bend your front knee at a 90-degree angle.",
+            "Stretch your arms out, parallel to the floor.",
+            "Keep your gaze over your front hand.",
+            "Hold for 5 breaths, then switch sides."
+        ]
+    },
+    { 
+        id: 4, name: "Child's Pose", type: "Resting", image: "/yoga4.png", 
+        description: "A gentle resting pose to relax your body.",
+        steps: [
+            "Sit on your heels with knees apart.",
+            "Stretch your arms forward on the mat.",
+            "Rest your forehead on the floor.",
+            "Breathe deeply and relax your body.",
+            "Hold for 5 breaths or as long as needed."
+        ]
+    }
 ];
 
 const Library = () => {
     const [search, setSearch] = useState("");
+    const [selectedPose, setSelectedPose] = useState(null);
 
     const filteredPoses = yogaPoses.filter(pose =>
         pose.name.toLowerCase().includes(search.toLowerCase()) || 
@@ -50,7 +86,7 @@ const Library = () => {
             />
             <div className="pose-grid">
                 {filteredPoses.map((pose) => (
-                    <div key={pose.id} className="pose-card">
+                    <div key={pose.id} className="pose-card" onClick={() => setSelectedPose(pose)}>
                         <img src={pose.image} alt={pose.name} />
                         <h3>{pose.name}</h3>
                         <p><strong>Type:</strong> {pose.type}</p>
@@ -58,8 +94,26 @@ const Library = () => {
                     </div>
                 ))}
             </div>
+
+            {/* Modal for Step Instructions */}
+            {selectedPose && (
+                <div className="modal-overlay" onClick={() => setSelectedPose(null)}>
+                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                        <h2>{selectedPose.name}</h2>
+                        <img src={selectedPose.image} alt={selectedPose.name} />
+                        <h3>Step-by-Step Instructions</h3>
+                        <ul>
+                            {selectedPose.steps.map((step, index) => (
+                                <li key={index}>{index + 1}. {step}</li>
+                            ))}
+                        </ul>
+                        <button onClick={() => setSelectedPose(null)}>Close</button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
 
 export default Library;
+
