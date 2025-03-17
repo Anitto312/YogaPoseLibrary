@@ -14,7 +14,7 @@
 
 .pose-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 6fr));
+    grid-template-columns: repeat(3, 250px);
     gap: 20px;
     padding: 20px;
 }
