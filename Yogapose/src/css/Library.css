@@ -29,8 +29,7 @@
 
 .pose-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    background-color: #e673e6;
+    box-shadow: 3px 4px 10px  #e673e6;
 }
 .pose-card img {
     width: 100%;
