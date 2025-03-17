@@ -1,8 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
-
-// Signup Route
 router.post("/signup", async (req, res) => {
     try {
         const { name, email, password } = req.body;
@@ -19,8 +17,6 @@ router.post("/signup", async (req, res) => {
         res.status(500).json({ message: "Server error" });
     }
 });
-
-// Login Route
 router.post("/login", async (req, res) => {
     try {
         const { email, password } = req.body;

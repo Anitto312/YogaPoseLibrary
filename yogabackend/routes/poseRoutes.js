@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const Pose = require("../models/PoseModel"); // MongoDB Model
+const Pose = require("../models/PoseModel");
 
-// GET all yoga poses
 router.get("/poses", async (req, res) => {
     try {
         const poses = await Pose.find();

@@ -10,7 +10,7 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch("https://yogaposelibrary.onrender.com/api/auth/login", {  // ✅ Fixed API URL
+            const response = await fetch("https://yogaposelibrary.onrender.com/api/auth/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password }),
