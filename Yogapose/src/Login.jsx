@@ -26,7 +26,7 @@ const Login = () => {
             localStorage.setItem("token", data.token);
 
             // ✅ Redirect user to library page after successful login
-            navigate("/library");
+            navigate("/home");
         } catch (error) {
             alert(error.message);
         }
