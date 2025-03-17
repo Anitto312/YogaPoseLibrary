@@ -16,6 +16,7 @@ const Signup = () => {
         e.preventDefault();
         try {
             const res = await axios.post("https://yogaposelibrary.onrender.com/api/auth/signup", formData);
+
             alert(res.data.message);
             navigate("/login");
         } catch (err) {

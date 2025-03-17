@@ -2,9 +2,10 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
-app.use(cors({ origin: ["https://yoga-pose-library.vercel.app/"], credentials: true }));
+
 
 const app = express();
+app.use(cors({ origin: ["https://yoga-pose-library.vercel.app/"], credentials: true }));
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
