@@ -8,7 +8,8 @@ const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
 // ✅ Use CORS only once (Fixes issue)
-app.use(cors({ origin: ["https://yoga-pose-library.vercel.app"], credentials: true }));
+app.use(cors({ origin: "https://yoga-pose-library.vercel.app", credentials: true }));
+
 
 // Middleware
 app.use(express.json());

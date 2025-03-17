@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./css/Signup.css";
 
+
 const Signup = () => {
     const [formData, setFormData] = useState({ name: "", email: "", password: "" });
     const [error, setError] = useState("");
@@ -15,7 +16,7 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("https://yogaposelibrary.onrender.com/api/auth/signup", formData);
+            const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/signup`, formData);
 
             alert(res.data.message);
             navigate("/login");
