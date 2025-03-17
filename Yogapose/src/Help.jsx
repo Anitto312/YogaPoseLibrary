@@ -1,4 +1,4 @@
-import "./css/Help.css";
+import "./css/help.css";
 
 const Help = () => {
     return (
