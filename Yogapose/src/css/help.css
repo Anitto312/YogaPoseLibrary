@@ -1,0 +1,34 @@
+.help-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.faq, .contact {
+    margin: 20px auto;
+    padding: 20px;
+    width: 60%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact button {
+    background: #be319b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background: #9b267a;
+}

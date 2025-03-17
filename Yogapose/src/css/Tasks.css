@@ -1,0 +1,43 @@
+.tasks-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.task-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.task-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.task-card h3 {
+    color: #be319b;
+    margin-bottom: 10px;
+}
+
+.task-card button {
+    background: #be319b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.task-card button:hover {
+    background: #9b267a;
+}
+
+.task-card.completed {
+    background: #e0f7e9;
+    border: 2px solid #34a853;
+}
